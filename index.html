@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Camionero</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📊 Registro de Camionero</h1>
+        <div class="month-selector">
+            <button id="prev-month">◀</button>
+            <h2 id="current-month">Julio 2025</h2>
+            <button id="next-month">▶</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Registrar Recorrido</h2>
+            <form id="trip-form">
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="trips">Recorridos:</label>
+                    <input type="number" id="trips" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="earnings">Ganancias ($):</label>
+                    <input type="number" id="earnings" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="meds">Medicamentos:</label>
+                    <input type="number" id="meds" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="crack">Crack:</label>
+                    <input type="number" id="crack" min="0" required>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <section class="data-section">
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <h3>Total Recorridos</h3>
+                    <p id="total-trips">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Ganancias</h3>
+                    <p id="total-earnings">$0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Promedio Diario</h3>
+                    <p id="avg-earnings">$0</p>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-box">
+                    <h3>Ganancias Diarias</h3>
+                    <canvas id="earnings-chart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Distribución de Objetos</h3>
+                    <canvas id="items-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3>Registro del Mes</h3>
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Recorridos</th>
+                            <th>Ganancias ($)</th>
+                            <th>Medicamentos</th>
+                            <th>Crack</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                        <!-- Los datos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>La Campora S.R.L</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
